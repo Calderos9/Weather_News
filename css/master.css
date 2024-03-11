@@ -1,0 +1,239 @@
+@font-face {
+    font-family: 'ostrich';
+src: url('/font/OstrichSans-Black.otf')  format('truetype'), /* Safari, Android, iOS */
+}
+p,h2,td,button{
+    font-size: 1.5em;
+    font-family: ostrich;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+h2{
+    font-size: 2em;
+    color: #ffffff;
+}
+img{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+body {
+    background-color: #ffffff;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;
+    margin: 0%;
+    font-size: 16px;
+}
+
+/*--Header and Footer--*/
+.strip{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #105ea8;
+    height: 150px;
+}
+.strip img{
+    height:80%;
+}
+
+/*--Section--*/
+.background {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    background-color: rgb(104, 187, 255);
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+.background div{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.search{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+select {
+    /* Reset */
+    appearance: none;
+    border: 0;
+    outline: 0;
+    font-family: ostrich;
+    letter-spacing: 2px;
+    font-size: 1.5em;
+    /* Personalize */
+    width: auto;
+    padding: 1rem 4rem 1rem 1rem;
+    background-color: white;
+    color: #0c4176;
+    border-radius: 0.25em;
+    background-image: none;
+    cursor: pointer;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+    display: none;
+}
+/* Custom Select wrapper */
+.select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: auto;
+    border-radius: .25em;
+    overflow: hidden;
+  }
+/* Arrow */
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1.35em;
+    background-color: #105ea8;
+    color: #ffffff;
+    transition: .25s all ease;
+    pointer-events: none;
+}
+/* Transition */
+.select:hover::after {
+    
+    color: #fde55e;
+}
+option{
+    letter-spacing: 2px;
+}
+button{
+    border: none;
+    content: '⌕';
+    color: white;
+    background-color: #105ea8;
+    font-size: 2em;
+    height: 61px;
+    border-radius: .25em;
+    text-decoration: none;
+    padding-left: 18px;
+    padding-right: 18px;
+    margin-left: 18px;
+    cursor: pointer;
+}
+button:hover{
+    color: #fde55e;
+}
+
+
+/*--Present--*/
+.temp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    background:rgba(0, 0, 0, 0.164);
+    border-radius:5px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+/*--Forecast--*/
+.forcast{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background:rgba(0, 0, 0, 0.164);
+    width: 90%;
+    border-radius:5px;
+}
+.forcast div{
+    width: 90%;
+}
+.forcast div div{
+    width: auto;
+}
+hr {
+    border-top: 1px solid #ffffff;
+    border-radius: 5px;
+}
+table{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+tr{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+td{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+
+
+/*Animation for fading*/
+/* Define keyframes for the fade-out animation */
+@keyframes fadeOut {
+    0% { opacity: 1; } /* Start with full opacity */
+    100% { opacity: 0; } /* End with no opacity */
+}
+@keyframes fadeIn {
+    0% { opacity: 0; } /* Start with full opacity */
+    100% { opacity: 1; } /* End with no opacity */
+}
+/* Apply the fade-out animation to the div */
+.fade-out {
+    animation-name: fadeOut; /* Name of the animation */
+    animation-duration: 0.5s; /* Duration of the animation */
+    animation-fill-mode: forwards; /* Retain the final state after animation */
+}
+.fade-in{
+    animation-name: fadeIn; /* Name of the animation */
+    animation-duration: 0.5s; /* Duration of the animation */
+    animation-fill-mode: forwards; /* Retain the final state after animation */
+}
+.start{
+    visibility: hidden;
+    height: 500px;
+}
+
+/* Use a media query to add a break point at 1024px: */
+@media only screen and (max-width: 1024px) {
+    .main_d{
+        width: 90%;
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+    tr{
+        width: 100%;
+    }
+    body{
+        font-size: 20px;
+    }
+    .search{
+        flex-direction: column;
+        width: 90%;
+    }
+    button{
+        width: 100%;
+        margin-left: 0%;
+    }
+    .select{
+        width: 100%;
+    }
+    select{
+        width: 100%;
+    }
+    tr{
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}
